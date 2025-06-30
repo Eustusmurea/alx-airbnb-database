@@ -1,4 +1,4 @@
--- Initial  query
+-- Initial query
 SELECT
     b.booking_id,
     b.start_date,
@@ -41,6 +41,7 @@ JOIN properties p ON b.property_id = p.property_id
 JOIN payments pay ON b.booking_id = pay.booking_id
 WHERE
     b.start_date >= CURRENT_DATE - INTERVAL '12 months'
+    AND b.status = 'confirmed'
 ORDER BY
     b.start_date DESC
 LIMIT 100;

@@ -28,6 +28,9 @@ FROM
 LEFT JOIN
     Reviews r ON p.id = r.property_id;
 
+ORDER BY
+    p.name DESC;
+
 
 --- select all users and their respective bookings
 --- full outer join query
